@@ -179,6 +179,10 @@ open class PKHUD: NSObject {
                                                            selector: #selector(PKHUD.performDelayedHide(_:)),
                                                            userInfo: userInfo,
                                                            repeats: false)
+      
+        if let hideTimer = hideTimer {
+          RunLoop.main.add(hideTimer, forMode: .common)
+        }
     }
 
     // MARK: Internal
